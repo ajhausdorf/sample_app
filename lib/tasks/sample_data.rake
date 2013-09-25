@@ -1,24 +1,33 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    100.times do |n|
-      puts "[DEBUG] creating user #{n+1} of 10"
-      name = Faker::Name.name
-      email = "user-#{n+1}@example.com"
-      password = "password"
-      User.create!( name: name,
-                    email: email,
-                    password: password,
-                    password_confirmation: password)
-    end
+    make_users
+    make_microposts
+    make_relationships
+  end
+end
 
-    User.all.each do |user|
-      puts "[DEBUG] uploading images for user #{user.id} of #{User.last.id}"
-      100.times do |n|
-        image = File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample)
-        description = %w(cool awesome crazy wow adorbs incredible).sample
-        user.pins.create!(image: image, description: description)
-      end
-    end
+def make_users
+  admin = User.create!(name:     "Example User",
+                       email:    "example@railstutorial.org",
+                       password: "foobar",
+                       password_confirmation: "foobar",
+                       admin: true)
+  99.times do |n|
+    name  = Faker::Name.name
+    email = "example-#{n+1}@railstutorial.org"
+    password  = "password"
+    User.create!(name:     name,
+                 email:    email,
+                 password: password,
+                 password_confirmation: password)
+  end
+end
+
+def make_microposts
+  users = User.all(limit: 6)
+  50.times do
+    content = Faker::Lorem.sentence(5)
+    users.each { |user| user.microposts.create!(content: content) }
   end
 end
