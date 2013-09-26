@@ -12,19 +12,65 @@
       </section>
     </aside>
     <div class="span8">
-      <h3>News Feed</h3>
+      <h3>News Feed--Follow
+      <a href="https://rocky-harbor-8292.herokuapp.com/users">users</a> 
+      to populate</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>  
 <% else %>
-  <div class="center hero-unit">
+
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
     <h1>What has influenced you today?</h1>
 
     <h2>
-      Find out what your peers are reading.
+      See the content that matters to your friends and influencers.
     </h2>
-
-    <%= link_to "Sign up now!", signup_path, 
+    <center>
+      <%= link_to "Sign up now!", signup_path, 
                                 class: "btn btn-large btn-primary" %>
+    </center>
+
+    <div class="active item">…</div>
+    <div class="item">…</div>
+    <div class="item">…</div>
   </div>
-<% end %> 
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div> 
+
+<div class="row">
+  <div class="span4">
+    <div class="center hero-unit"> 
+    <P>
+      Share the links that impacted you and your thoughts today with your followers.
+    </p>
+    </div>  
+  </div>
+
+  <div class="span4">
+    <div class="center hero-unit"> 
+    <P>
+      Follow your friends and influencers to see the content and ideas at the front of their minds.
+    </p> 
+    </div>
+  </div>
+  
+  <div class="span4">
+    <div class="center hero-unit"> 
+    <P>
+      Scroll through your home page for a feed of online content recommended by those you follow.
+    </p> 
+    </div>
+  </div>
+  </div>
+
+<% end %>
