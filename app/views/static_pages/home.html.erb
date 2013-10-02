@@ -20,38 +20,22 @@
   </div>  
 <% else %>
 
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <h1>What has influenced you today?</h1>
-
-    <h2>
-      See the content that matters to your friends and influencers.
-    </h2>
+<div class="hero-unit">
+  <h1>What has influenced you today?</h1>
+  <h2>A personalized feed of articles and content your friends and influencers have recommended</h2>
+  <p>
     <center>
       <%= link_to "Sign up now!", signup_path, 
-                                class: "btn btn-large btn-primary" %>
+                                      class: "btn btn-large btn-primary" %>
     </center>
-
-    <div class="active item">…</div>
-    <div class="item">…</div>
-    <div class="item">…</div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div> 
+  </p>
+</div>
 
 <div class="row">
   <div class="span4">
     <div class="center hero-unit"> 
     <P>
-      Share the links that impacted you and your thoughts today with your followers.
+      Share the links that impacted you and your thoughts today.
     </p>
     </div>  
   </div>
