@@ -12,9 +12,10 @@
       </section>
     </aside>
     <div class="span8">
-      <h3>News Feed--Follow
-      <a href="https://exacerboom.com/users">users</a> 
-      to populate</h3>
+      <h3> News Feed </h3>
+      <h5>Follow
+      <a <%= link_to "users", users_path %> </a>
+      to populate</h5>
       <%= render 'shared/feed' %>
     </div>
   </div>  
